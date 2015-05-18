@@ -1,0 +1,17 @@
+@mixin rowlow-font-face($font-name, $class-name, $file, $fallback: sans-serif, $weight: normal, $style: normal){
+	@font-face {
+		font-family: 	#{$font-name};
+		src: 			url(#{$file} + '.eot');
+		src: 			url(#{$file} + '.eot?#iefix') format('embedded-opentype'),
+						url(#{$file} + '.ttf') format('truetype');
+		font-weight: 	#{$weight};
+		font-style: 	#{$style};
+	}
+	
+	.#{$rowlow-font-face-namespace}font-face--#{$class-name}{
+		font-family: 	$font-name, $fallback;
+		font-weight: 	#{$weight};
+		font-style: 	#{$style};
+	}
+
+}
